@@ -1,0 +1,21 @@
+{
+  "id": "./",
+  "name": "សៀវភៅចំណូលចំណាយហាងកាហ្វេ",
+  "short_name": "ចំណូលចំណាយ",
+  "description": "កត់ត្រាចំណូល ចំណាយ និងប្រាក់ចំណេញហាងកាហ្វេ",
+  "lang": "km",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f2f4f1",
+  "theme_color": "#3b2a22",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

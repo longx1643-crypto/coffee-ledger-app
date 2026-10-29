@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<rect width="512" height="512" rx="112" fill="#3b2a22"/>
+<path d="M112 176h240v146a76 76 0 0 1-76 76h-88a76 76 0 0 1-76-76V176z" fill="#fff4e8"/>
+<path d="M352 205h28a48 48 0 0 1 0 96h-28" fill="none" stroke="#fff4e8" stroke-width="26"/>
+<path d="M164 130c-18-22 16-31 0-54M230 130c-18-22 16-31 0-54M296 130c-18-22 16-31 0-54" fill="none" stroke="#d6a77a" stroke-width="16" stroke-linecap="round"/>
+<text x="232" y="275" font-size="70" font-family="sans-serif" font-weight="800" text-anchor="middle" fill="#3b2a22">៛</text>
+</svg>

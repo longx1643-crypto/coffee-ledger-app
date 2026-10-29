@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#3b2a22">
+<meta name="description" content="សៀវភៅកត់ត្រាចំណូលចំណាយហាងកាហ្វេ">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<title>សៀវភៅចំណូលចំណាយហាងកាហ្វេ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f4f1;--surf:#fff;--ink:#1d2b2a;--mute:#66767３;--line:#dde3df;--in:#1f7a5a;--out:#b5403a;--acc:#3b2a22;--accfg:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--mute:#66767a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--surf:#1b2321;--ink:#e8eeec;--mute:#93a29f;--line:#2b3633;--in:#4cc49a;--out:#ef8a82;--acc:#e8d9cc;--accfg:#2a1d16}}
+:root[data-theme="dark"]{--bg:#121816;--surf:#1b2321;--ink:#e8eeec;--mute:#93a29f;--line:#2b3633;--in:#4cc49a;--out:#ef8a82;--acc:#e8d9cc;--accfg:#2a1d16}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans Khmer","Khmer OS",system-ui,sans-serif;line-height:1.7;font-size:16px}
+main{max-width:520px;margin:0 auto;padding:16px 16px 48px}
+h1{font-size:18px;font-weight:800;margin:4px 0 12px}
+.tabs{display:flex;gap:6px;margin-bottom:14px}
+.tabs button{flex:1;padding:6px 0;border:1px solid var(--line);background:transparent;color:var(--mute);border-radius:8px;font:inherit;font-size:14px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--acc);color:var(--accfg);border-color:var(--acc)}
+.nav{display:flex;gap:6px;margin-bottom:4px}
+.nav input{flex:1;text-align:center}
+.nav button{width:44px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:8px;font:inherit;font-size:22px;cursor:pointer}
+.net{padding:18px 0 14px;border-bottom:2px solid var(--ink)}
+.net small{color:var(--mute);font-size:14px}
+.net b{display:block;font-size:40px;line-height:1.3;font-weight:800;letter-spacing:-.5px}
+.net b.neg{color:var(--out)}
+.split{display:flex;gap:24px;padding:12px 0;border-bottom:1px solid var(--line)}
+.split div{flex:1}.split small{display:block;color:var(--mute);font-size:13px}
+.split span{font-weight:600;font-size:18px}
+.in{color:var(--in)}.out{color:var(--out)}
+.form{margin:18px 0;padding:14px;background:var(--surf);border:1px solid var(--line);border-radius:12px;display:grid;gap:10px}
+.kind{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.kind button{padding:8px;border-radius:8px;border:1.5px solid var(--line);background:transparent;color:var(--ink);font:inherit;cursor:pointer}
+.kind button[aria-pressed="true"].i{border-color:var(--in);color:var(--in);font-weight:600}
+.kind button[aria-pressed="true"].o{border-color:var(--out);color:var(--out);font-weight:600}
+input,select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.save{padding:11px;border:0;border-radius:8px;background:var(--acc);color:var(--accfg);font:inherit;font-weight:600;cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--in);outline-offset:2px}
+.err{color:var(--out);font-size:14px;min-height:1.2em;margin:0}
+ul{list-style:none;margin:0;padding:0}
+li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+li .m{flex:1;min-width:0}
+li .c{font-weight:600}li .n{color:var(--mute);font-size:13px;overflow-wrap:anywhere}
+li .a{font-weight:600;white-space:nowrap}
+li .x{border:0;background:transparent;color:var(--mute);font-size:20px;cursor:pointer;padding:4px 8px}
+.empty{color:var(--mute);text-align:center;padding:28px 0}
+.stat{margin:-6px 0 12px;font-size:13px;color:var(--mute)}
+.tools{display:grid;gap:8px;margin-top:22px}
+.tools button{padding:10px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;cursor:pointer}
+.tools button[hidden]{display:none}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+.cols h2{font-size:15px;margin:0;padding:6px 0;border-bottom:2px solid currentColor}
+.cols li{align-items:flex-start;padding:8px 0}
+.cols li .a{font-size:15px}
+.cols li .x{padding:0 4px}
+.cols .empty{color:var(--mute);padding:14px 0;text-align:left;font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<h1>សៀវភៅចំណូលចំណាយហាងកាហ្វេ</h1>
+<p class="stat" id="stat">ទិន្នន័យក្នុងទូរស័ព្ទនេះប៉ុណ្ណោះ</p>
+
+<div class="tabs" id="tabs">
+  <button data-p="day" aria-pressed="true">ថ្ងៃ</button>
+  <button data-p="month" aria-pressed="false">ខែ</button>
+  <button data-p="all" aria-pressed="false">ទាំងអស់</button>
+</div>
+
+<div class="nav"><button id="prev" aria-label="ថ្ងៃមុន">‹</button><input id="vdate" type="date"><button id="next" aria-label="ថ្ងៃបន្ទាប់">›</button></div>
+<section class="net">
+  <small>ប្រាក់ចំណេញ</small>
+  <b id="net">0 ៛</b>
+</section>
+<section class="split">
+  <div><small>ចំណូល</small><span class="in" id="sin">0 ៛</span></div>
+  <div><small>ចំណាយ</small><span class="out" id="sout">0 ៛</span></div>
+</section>
+
+<section class="form">
+  <div class="kind">
+    <button class="i" id="ki" aria-pressed="true">ចំណូល</button>
+    <button class="o" id="ko" aria-pressed="false">ចំណាយ</button>
+  </div>
+  <div class="row">
+    <input id="amt" type="number" inputmode="numeric" min="0" placeholder="ចំនួនទឹកប្រាក់ (៛)">
+    <input id="date" type="date">
+  </div>
+  <input id="cat" type="text" list="items" autocomplete="off" placeholder="ឈ្មោះភេសជ្ជៈ"><datalist id="items"></datalist>
+  <input id="note" type="text" placeholder="កំណត់ចំណាំ (មិនបង្ខំ)">
+  <p class="err" id="err" role="alert"></p>
+  <button class="save" id="save">រក្សាទុក</button>
+</section>
+
+<div class="cols" id="cols"><div><h2 class="in">ចំណូល</h2><ul id="lin"></ul></div><div><h2 class="out">ចំណាយ</h2><ul id="lout"></ul></div></div>
+<div class="tools"><button id="mig" hidden></button><button id="exp">ទាញទិន្នន័យចេញ (Excel / CSV)</button></div>
+</main>
+
+<script>
+const CATS={
+  in:["លក់កាហ្វេ","លក់ភេសជ្ជៈផ្សេង","លក់នំ","ផ្សេងៗ"],
+  out:["គ្រាប់កាហ្វេ","ទឹកដោះគោ និងស្ករ","ពែង និងវ៉ែស","ជួលហាង","ប្រាក់ខែបុគ្គលិក","ភ្លើង និងទឹក","ផ្សេងៗ"]
+};
+const KEY="coffee-ledger-v1";
+let entries=[],kind="in",period="day",armed=null;
+try{entries=JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){entries=[]}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(entries))}catch(e){}}
+let col=null,local=entries.slice();
+function put(e){
+  if(col){col.doc(String(e.id)).set(e).catch(()=>{$("err").textContent="មិនអាចរក្សាទុកបាន។ ប្រហែលអ្នកមានសិទ្ធិត្រឹមតែមើល។"})}
+  else{entries.push(e);persist();render()}
+}
+function del(id){
+  if(col){col.doc(id).delete().catch(()=>{$("err").textContent="មិនអាចលុបបាន។"})}
+  else{entries=entries.filter(x=>String(x.id)!==id);persist();render()}
+}
+async function initDb(){
+  try{
+    if(!window.claude||!claude.use)return;
+    const db=await claude.use("db");
+    if(!db)return;
+    col=db.collection("entries");
+    col.onSnapshot(s=>{entries=s.docs.map(d=>d.data());render()},()=>{col=null;entries=local.slice();$("stat").textContent="ទិន្នន័យក្នុងទូរស័ព្ទនេះប៉ុណ្ណោះ";render()});
+    $("stat").textContent="ទិន្នន័យរួម៖ បុគ្គលិកទាំងអស់ឃើញដូចគ្នា";
+    if(local.length){$("mig").textContent="ផ្ទេរទិន្នន័យចាស់ក្នុងទូរស័ព្ទនេះទៅទិន្នន័យរួម ("+local.length+")";$("mig").hidden=false}
+  }catch(e){}
+}
+async function migrate(){
+  try{
+    for(const e of local){await col.doc(String(e.id)).set(e)}
+    local=[];try{localStorage.removeItem(KEY)}catch(e){}
+    $("mig").hidden=true;
+  }catch(e){$("err").textContent="ផ្ទេរមិនបានសម្រេចទេ។"}
+}
+async function exportCsv(){
+  const q=s=>'"'+String(s).replace(/"/g,'""')+'"';
+  const rows=[["ថ្ងៃ","ប្រភេទ","ឈ្មោះ","ចំនួន (៛)","កំណត់ចំណាំ"]].concat(entries.slice().sort((a,b)=>a.date.localeCompare(b.date)).map(e=>[e.date,e.t==="in"?"ចំណូល":"ចំណាយ",e.cat,e.amt,e.note||""]));
+  const csv="\ufeff"+rows.map(r=>r.map(q).join(",")).join("\r\n");
+  try{
+    const dl=window.claude?await claude.use("downloads"):null;
+    if(!dl){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));a.download="coffee-ledger-"+today()+".csv";document.body.appendChild(a);a.click();a.remove();return}
+    await dl.save({filename:"coffee-ledger-"+today()+".csv",data:csv});
+  }catch(e){}
+}
+const $=id=>document.getElementById(id);
+const today=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const fmt=n=>Math.round(n).toLocaleString("en-US")+" ៛";
+
+function fillCats(){
+  const names=[...new Set(entries.filter(e=>e.t===kind).map(e=>e.cat).concat(CATS[kind]))];
+  $("items").innerHTML=names.map(c=>`<option value="${esc(c)}">`).join("");
+  $("cat").placeholder=kind==="in"?"ឈ្មោះភេសជ្ជៈ (ឧ. ឡាតេ)":"ឈ្មោះចំណាយ (ឧ. ទឹកដោះគោ)";
+}
+function setKind(k){kind=k;$("ki").setAttribute("aria-pressed",k==="in");$("ko").setAttribute("aria-pressed",k==="out");fillCats()}
+function inPeriod(e){
+  if(period==="all")return true;
+  const t=$("vdate").value||today();
+  return period==="day"?e.date===t:e.date.slice(0,7)===t.slice(0,7);
+}
+function render(){
+  const list=entries.filter(inPeriod).sort((a,b)=>b.date.localeCompare(a.date)||b.id-a.id);
+  const si=list.filter(e=>e.t==="in").reduce((s,e)=>s+e.amt,0);
+  const so=list.filter(e=>e.t==="out").reduce((s,e)=>s+e.amt,0);
+  $("sin").textContent=fmt(si);$("sout").textContent=fmt(so);
+  const net=$("net");net.textContent=fmt(si-so);net.className=si-so<0?"neg":"";
+  const row=e=>{
+    const d=e.date.split("-");
+    return `<li><div class="m"><div class="c">${esc(e.cat)}</div><div class="a ${e.t}">${fmt(e.amt)}</div><div class="n">${d[2]}/${d[1]}${e.note?" · "+esc(e.note):""}</div></div><button class="x" data-id="${e.id}" aria-label="លុប"${armed===String(e.id)?' style="color:var(--out);font-size:14px;font-weight:600"':''}>${armed===String(e.id)?"លុប?":"×"}</button></li>`;
+  };
+  const fill=(id,t)=>{const l=list.filter(e=>e.t===t);$(id).innerHTML=l.length?l.map(row).join(""):`<li class="empty">មិនទាន់មាន</li>`};
+  fill("lin","in");fill("lout","out");
+}
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+$("ki").onclick=()=>setKind("in");
+$("ko").onclick=()=>setKind("out");
+$("tabs").onclick=e=>{
+  const p=e.target.dataset.p;if(!p)return;period=p;
+  document.querySelectorAll("#tabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.p===p));
+  render();
+};
+$("save").onclick=()=>{
+  const amt=parseFloat($("amt").value),name=$("cat").value.trim();
+  if(!name){$("err").textContent="សូមវាយឈ្មោះភេសជ្ជៈ ឬមុខទំនិញ។";return}
+  if(!amt||amt<=0){$("err").textContent="សូមបញ្ចូលចំនួនទឹកប្រាក់ឱ្យត្រឹមត្រូវ។";return}
+  $("err").textContent="";
+  put({id:Date.now(),t:kind,amt,cat:name,note:$("note").value.trim(),date:$("date").value||today()});
+  $("amt").value="";$("note").value="";$("cat").value="";fillCats();
+};
+$("cols").onclick=e=>{
+  const id=e.target.dataset.id;if(!id){if(armed){armed=null;render()}return}
+  if(armed!==id){armed=id;render();return}
+  armed=null;
+  del(id);render();
+};
+$("vdate").value=today();$("date").value=today();
+function setView(s){$("vdate").value=s;$("date").value=s;render()}
+function shift(n){const d=new Date($("vdate").value+"T00:00:00");d.setDate(d.getDate()+n);setView(d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"))}
+$("vdate").onchange=()=>{if($("vdate").value)setView($("vdate").value)};
+$("prev").onclick=()=>shift(-1);
+$("exp").onclick=exportCsv;
+$("mig").onclick=migrate;
+initDb();
+$("next").onclick=()=>shift(1);
+fillCats();render();
+if ("serviceWorker" in navigator) { window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js").catch(() => {})); }
+</script>
+</body>
+</html>
